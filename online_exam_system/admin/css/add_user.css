@@ -1,0 +1,325 @@
+/* add_user.css - Stylish User Registration Form */
+
+/* Base Styles */
+:root {
+    --primary-color: #6a11cb;
+    --primary-light: #8e2de2;
+    --secondary-color: #2575fc;
+    --accent-color: #00c6fb;
+    --success-color: #38ef7d;
+    --danger-color: #ff416c;
+    --warning-color: #ff9a00;
+    --info-color: #00d2ff;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --white: #ffffff;
+    --card-radius: 12px;
+    --btn-radius: 8px;
+    --transition-speed: 0.3s;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: var(--dark-color);
+    min-height: 100vh;
+}
+
+/* Container Styles */
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    margin-bottom: 2rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1.25rem 1.5rem;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    transform: rotate(30deg);
+    animation: shine 8s infinite linear;
+}
+
+.card-header h4 {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: var(--btn-radius);
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-light {
+    background-color: rgba(255,255,255,0.9);
+    color: var(--primary-color);
+    border: none;
+}
+
+.btn-light:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #2ecc71);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.75rem;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #2ecc71, var(--success-color));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(56, 239, 125, 0.3);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.75rem;
+    font-size: 1.1rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.float-right {
+    float: right;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-control {
+    border-radius: var(--btn-radius);
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 198, 251, 0.25);
+    outline: none;
+}
+
+label {
+    font-weight: 500;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-top: 0.25rem;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: var(--btn-radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.alert-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.alert-danger h5 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.alert-danger ul {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+}
+
+.alert-danger li {
+    margin-bottom: 0.25rem;
+}
+
+.alert-info {
+    background-color: var(--info-color);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+    animation: alertShine 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(30deg) translate(-10%, -10%);
+    }
+    100% {
+        transform: rotate(30deg) translate(10%, 10%);
+    }
+}
+
+@keyframes alertShine {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .float-right {
+        float: none;
+        margin-top: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Custom Select Styles */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236a11cb' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem;
+}
+
+/* Form Focus Effects */
+.form-group:focus-within label {
+    color: var(--primary-color);
+}
+
+.form-group:focus-within .form-text {
+    color: var(--primary-light);
+}
+
+/* Floating Label Effect (optional) */
+/*
+.form-group.floating-label {
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.form-group.floating-label label {
+    position: absolute;
+    top: 1.75rem;
+    left: 1rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    background-color: var(--white);
+    padding: 0 0.5rem;
+    border-radius: 4px;
+}
+
+.form-group.floating-label .form-control:focus + label,
+.form-group.floating-label .form-control:not(:placeholder-shown) + label {
+    top: 0.5rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+*/

@@ -1,0 +1,351 @@
+/* dashboard.css */
+
+/* Base Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --danger-color: #f72585;
+    --success-color: #4cc9f0;
+    --warning-color: #f8961e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --white: #ffffff;
+    --sidebar-width: 250px;
+    --header-height: 80px;
+    --transition-speed: 0.3s;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    animation: fadeInDown 0.5s ease-out;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info span {
+    font-weight: 500;
+}
+
+.logout-btn {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Navigation Styles */
+nav {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.6s ease-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+nav ul li a i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Content Section Styles */
+.content-section {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.content-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.no-pending {
+    color: var(--gray-color);
+    font-style: italic;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(108, 117, 125, 0.05);
+    border-radius: 5px;
+}
+
+/* Table Styles */
+.approval-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.approval-table thead {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.approval-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.approval-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.approval-table tbody tr {
+    transition: all var(--transition-speed) ease;
+}
+
+.approval-table tbody tr:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+    transform: translateX(5px);
+}
+
+/* Button Styles */
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-approve, .btn-reject, .btn-preview {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all var(--transition-speed) ease;
+    white-space: nowrap;
+}
+
+.btn-approve {
+    background-color: var(--success-color);
+    color: var(--white);
+}
+
+.btn-approve:hover {
+    background-color: #3ab4d8;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-reject {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.btn-reject:hover {
+    background-color: #e5177e;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-preview {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-preview:hover {
+    background-color: #3a84d8;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        text-align: left;
+    }
+    
+    nav ul li a.active::after {
+        left: 0;
+        transform: none;
+        width: 5px;
+        height: 100%;
+    }
+    
+    .approval-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .btn-approve, .btn-reject, .btn-preview {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .user-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .content-section {
+        padding: 15px;
+    }
+    
+    .approval-table th, 
+    .approval-table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}

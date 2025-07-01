@@ -1,0 +1,11 @@
+<?php
+$password = 'lamo1234'; // Plain password
+$hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+echo "Hashed Password: " . $hashed_password; // Print the hashed password
+?>
+
+/////////////
+
+Hashed Password: $2y$10$Yyuh6n9beR/WrVZgDAWN6O8JB6sxamoty0FqZ6wLKdyJaFK0i6b7u
+INSERT INTO users (username, email, password, role, status) VALUES
+ ('balinaa', ' lamishethio@gmail.com', '$2y$10$Yyuh6n9beR/WrVZgDAWN6O8JB6sxamoty0FqZ6wLKdyJaFK0i6b7u', 'admin', 'approved');
